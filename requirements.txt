@@ -1,0 +1,7 @@
+numpy==1.11.3
+pickleshare==0.7.4
+pika==0.10.0
+proc==0.10.1
+pytest==3.0.5
+PyYAML==3.12
+rstr==2.2.5
