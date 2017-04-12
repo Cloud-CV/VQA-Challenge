@@ -133,14 +133,14 @@ class VQAEval:
 		self.setAccuracy(accQA, accQuesType, accAnsType)
 	
 	def processPunctuation(self, inText):
-		outText = self.puncStripBegin.sub("", inText)
-		outText = self.puncStripEnd.sub("", outText)
-		outText = self.commaStrip.sub("", outText)
-		outText = self.puncStrip.sub(" ", outText)
-		outText = self.spaceCleanup.sub(" ", outText)
-		outText = self.puncStrip2.sub(" ", outText)
-		outText = self.puncStrip2.sub("", outText)
-		outText = self.periodStrip.sub("", outText, re.UNICODE)
+		outText = puncStripBegin.sub("", inText)
+		outText = puncStripEnd.sub("", outText)
+		outText = commaStrip.sub("", outText)
+		outText = puncStrip.sub(" ", outText)
+		outText = spaceCleanup.sub(" ", outText)
+		outText = puncStrip2.sub(" ", outText)
+		outText = puncStrip2.sub("", outText)
+		outText = periodStrip.sub("", outText, re.UNICODE)
 		return outText
 		
 	def processDigitArticle(self, inText):
