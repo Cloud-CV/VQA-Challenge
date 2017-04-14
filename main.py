@@ -191,7 +191,7 @@ def evaluate(annFile, resFile, phase_codename):
     """
     result = {}
     result['result'] = []
-    result['submission_metdata'] = {x : {} for x in split_keys}
+    result['submission_metadata'] = {x : {} for x in split_keys}
     print('Evaluating phase..')
     for i in split_keys:
         # Add support for ques-Type accuracies
@@ -206,7 +206,7 @@ def evaluate(annFile, resFile, phase_codename):
         # Adding submission_metdata in the format below
         """
         {
-          "submission_metdata": {
+          "submission_metadata": {
             "split_codename_1": {
               perQ: {
                 qid1: acc...qidn: acc
@@ -223,11 +223,11 @@ def evaluate(annFile, resFile, phase_codename):
           }
         }
         """ 
-        result['submission_metdata'][i]['perQ'] = per_ques
-        result['submission_metdata'][i]['perQtype'] = ques_type_acc
-        result['submission_metdata'][i]['perAtype'] = res_dict
+        result['submission_metadata'][i]['perQ'] = per_ques
+        result['submission_metadata'][i]['perQtype'] = ques_type_acc
+        result['submission_metadata'][i]['perAtype'] = res_dict
         result['result'].append(res_dict)
-        result['submission_metdata'][i]['quesIdperansType'] = type_qids
+        result['submission_metadata'][i]['quesIdperansType'] = type_qids
 
     elapsed = time.time() - t
     print("Elapsed Time: " + str(elapsed))
