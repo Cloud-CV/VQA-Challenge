@@ -238,6 +238,7 @@ def evaluate(annFile, resFile, phase_codename):
             pprint(val)
             submission_result.append(val)
 
-    result['submission_result'] = submission_result
+    result['submission_metadata'] = json.dumps(result['submission_metadata'])
+    result['submission_result'] = json.dumps(submission_result)
 
     return result
